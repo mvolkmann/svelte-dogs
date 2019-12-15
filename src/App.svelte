@@ -19,5 +19,5 @@
 {#if mode === 'list'}
   <DogList on:mode={changeMode} on:select={selectDog} />
 {:else}
-  <DogForm {dog} {mode} on:mode={changeMode} />
+  <DogForm dog={{...dog}} {mode} on:mode={changeMode} />
 {/if}

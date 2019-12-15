@@ -56,7 +56,6 @@
 </form>
 
 <style>
-  /* TODO: Move some of these styles to global.css. */
   div {
     display: flex;
     align-items: center;
