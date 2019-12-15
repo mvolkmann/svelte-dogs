@@ -16,6 +16,7 @@
       dogMap[id] = {id, name, breed, size};
       return dogMap;
     });
+    // After saving, display the list.
     dispatch('mode', 'list');
   }
 </script>

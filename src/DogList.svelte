@@ -28,6 +28,8 @@
     selectedDogs = Array.from(selectedOptions).map(
       option => $dogStore[option.value]
     );
+    // Remember the first of the selected dogs.
+    // This is the one that can be edited.
     dispatch('select', selectedDogs[0]);
   }
 </script>
