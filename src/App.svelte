@@ -3,8 +3,7 @@
   import DogList from './DogList.svelte';
 
   let dog = {};
-  //let mode = 'list';
-  let mode = 'add';
+  let mode = 'list';
 
   function changeMode(event) {
     mode = event.detail;

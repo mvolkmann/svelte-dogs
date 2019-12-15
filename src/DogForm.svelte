@@ -20,57 +20,6 @@
   }
 </script>
 
-<style>
-  /* TODO: Move some of these styles to global.css. */
-  button {
-    border: solid lightgray 1px;
-    border-radius: 4px;
-    font-size: 18px;
-    margin-right: 5px;
-    padding: 4px;
-  }
-
-  button:disabled {
-    opacity: 0.3;
-  }
-
-  div {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-
-  form {
-    display: inline-block;
-  }
-
-  input {
-    border: solid lightgray 1px;
-    border-radius: 4px;
-    font-size: 18px;
-    margin: 0;
-    padding: 4px;
-  }
-
-  input[type='radio'] {
-    height: 16px;
-    margin: 0 5px 0 0;
-  }
-
-  label {
-    display: inline-block;
-    font-size: 18px;
-    font-weight: bold;
-    margin-right: 10px;
-    text-align: right;
-    width: 60px;
-  }
-
-  .radios > label {
-    width: auto;
-  }
-</style>
-
 <form on:submit|preventDefault={save}>
   <div>
     <label for="name">Name</label>
@@ -105,3 +54,42 @@
     <button on:click={() => dispatch('mode', 'list')}>Cancel</button>
   </div>
 </form>
+
+<style>
+  /* TODO: Move some of these styles to global.css. */
+  div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  form {
+    display: inline-block;
+  }
+
+  input {
+    border: solid lightgray 1px;
+    border-radius: 4px;
+    font-size: 18px;
+    margin: 0;
+    padding: 4px;
+  }
+
+  input[type='radio'] {
+    height: 16px;
+  }
+
+  label {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: right;
+    width: 60px;
+  }
+
+  .radios > label {
+    font-weight: normal;
+    width: auto;
+  }
+</style>

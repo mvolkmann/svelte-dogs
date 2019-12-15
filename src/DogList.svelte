@@ -43,6 +43,14 @@
   button:disabled {
     opacity: 0.4;
   }
+
+  option {
+    font-size: 18px;
+  }
+
+  select {
+    padding: 10px;
+  }
 </style>
 
 {#if dogs.length}
