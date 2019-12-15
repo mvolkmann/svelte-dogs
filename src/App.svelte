@@ -1,6 +1,10 @@
 <script>
   import DogForm from './DogForm.svelte';
   import DogList from './DogList.svelte';
+  import {bigDogsStore, smallDogsStore} from './stores.js';
+
+  $: console.log('small are:', $smallDogsStore);
+  $: console.log('big dogs are:', $bigDogsStore);
 
   let dog = {};
   let mode = 'list'; // others are 'create' and 'update'
