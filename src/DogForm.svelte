@@ -62,10 +62,6 @@
     margin-bottom: 10px;
   }
 
-  form {
-    display: inline-block;
-  }
-
   input {
     border: solid lightgray 1px;
     border-radius: 4px;
