@@ -7,15 +7,15 @@
   export let dog;
   export let mode;
 
-  $: canSave = dog.name && dog.breed && dog.size;
+  let {name, breed, size} = dog;
+  $: canSave = name && breed && size;
 
   function save() {
-    if (!dog.id) dog.id = getGuid();
+    const id = dog.id || getGuid();
     dogStore.update(dogMap => {
-      dogMap[dog.id] = dog;
+      dogMap[id] = {id, name, breed, size};
       return dogMap;
     });
-
     dispatch('mode', 'list');
   }
 </script>
@@ -23,25 +23,25 @@
 <form on:submit|preventDefault={save}>
   <div>
     <label for="name">Name</label>
-    <input autofocus id="name" bind:value={dog.name} />
+    <input autofocus id="name" bind:value={name} />
   </div>
   <div>
     <label for="breed">Breed</label>
-    <input id="breed" bind:value={dog.breed} />
+    <input id="breed" bind:value={breed} />
   </div>
   <div>
     <label>Size</label>
     <span class="radios">
       <label>
-        <input type="radio" value="small" bind:group={dog.size} />
+        <input type="radio" value="small" bind:group={size} />
         Small
       </label>
       <label>
-        <input type="radio" value="medium" bind:group={dog.size} />
+        <input type="radio" value="medium" bind:group={size} />
         Medium
       </label>
       <label>
-        <input type="radio" value="large" bind:group={dog.size} />
+        <input type="radio" value="large" bind:group={size} />
         Large
       </label>
     </span>

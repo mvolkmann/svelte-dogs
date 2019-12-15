@@ -10,14 +10,12 @@
     if (mode === 'create') dog = {};
   }
 
-  function selectDog(event) {
-    dog = event.detail;
-  }
+  const selectDog = event => (dog = event.detail);
 </script>
 
 <h1>Dogs</h1>
 {#if mode === 'list'}
   <DogList on:mode={changeMode} on:select={selectDog} />
 {:else}
-  <DogForm dog={{...dog}} {mode} on:mode={changeMode} />
+  <DogForm {dog} {mode} on:mode={changeMode} />
 {/if}

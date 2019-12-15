@@ -24,34 +24,13 @@
 
   function onSelect(event) {
     const {selectedOptions} = event.target;
+    // The value of each option is a dog id.
     selectedDogs = Array.from(selectedOptions).map(
       option => $dogStore[option.value]
     );
-    dispatch('select', selectedDogs[0]);
+    dispatch('select', dogs[0]);
   }
 </script>
-
-<style>
-  button {
-    background-color: transparent;
-    border: none;
-    font-size: 24px;
-    margin-right: 10px;
-    padding: 0;
-  }
-
-  button:disabled {
-    opacity: 0.4;
-  }
-
-  option {
-    font-size: 18px;
-  }
-
-  select {
-    padding: 10px;
-  }
-</style>
 
 {#if dogs.length}
   <select multiple on:change={onSelect}>
@@ -76,3 +55,25 @@
     <span aria-label="trashcan" role="img">&#x1f5d1;</span>
   </button>
 </div>
+
+<style>
+  button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    margin-right: 10px;
+    padding: 0;
+  }
+
+  button:disabled {
+    opacity: 0.4;
+  }
+
+  option {
+    font-size: 18px;
+  }
+
+  select {
+    padding: 10px;
+  }
+</style>
