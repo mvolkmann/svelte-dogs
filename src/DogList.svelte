@@ -28,7 +28,7 @@
     selectedDogs = Array.from(selectedOptions).map(
       option => $dogStore[option.value]
     );
-    dispatch('select', dogs[0]);
+    dispatch('select', selectedDogs[0]);
   }
 </script>
 

@@ -48,10 +48,10 @@
   </div>
   <div>
     <label />
-    <button disabled={!canSave} on:click={save}>
-      {mode === 'create' ? 'Save' : 'Update'}
+    <button disabled={!canSave}>{mode === 'create' ? 'Save' : 'Update'}</button>
+    <button type="button" on:click={() => dispatch('mode', 'list')}>
+      Cancel
     </button>
-    <button on:click={() => dispatch('mode', 'list')}>Cancel</button>
   </div>
 </form>
 
