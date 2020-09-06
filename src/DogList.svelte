@@ -37,7 +37,7 @@
 {#if dogs.length}
   <select multiple on:change={onSelect}>
     {#each dogs as dog (dog.id)}
-      <option key={dog.id} value={dog.id}>{dogToString(dog)}</option>
+      <option value={dog.id}>{dogToString(dog)}</option>
     {/each}
   </select>
 {:else}
